@@ -33,6 +33,16 @@ along with GCC; see the file COPYING3.  If not see
 
 #define MAX_ITERATIONS 17
 
+/*
+ * SCO OpenServer 5.0.7/3.2 has no MAXPATHLEN, but it has PATH_MAX (256).
+ * in limits.h. But it is not usable under ordinal condition.
+ */
+#if !defined(MAXPATHLEN)
+#if defined(_SCO_DS)
+#define MAXPATHLEN	256
+#endif
+#endif
+
 /* Defined in the automatically-generated underscore.c.  */
 extern int prepends_underscore;
 
