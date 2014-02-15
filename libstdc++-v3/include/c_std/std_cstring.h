@@ -97,33 +97,43 @@ _GLIBCXX_BEGIN_NAMESPACE(std)
 
   using ::memchr;
 
+#if !defined(_SCO_DS)
   inline void*
   memchr(void* __p, int __c, size_t __n)
   { return memchr(const_cast<const void*>(__p), __c, __n); }
+#endif
 
   using ::strchr;
 
+#if !defined(_SCO_DS)
   inline char*
   strchr(char* __s1, int __n)
   { return __builtin_strchr(const_cast<const char*>(__s1), __n); }
+#endif
 
   using ::strpbrk;
 
+#if !defined(_SCO_DS)
   inline char*
   strpbrk(char* __s1, const char* __s2)
   { return __builtin_strpbrk(const_cast<const char*>(__s1), __s2); }
+#endif
 
   using ::strrchr;
 
+#if !defined(_SCO_DS)
   inline char*
   strrchr(char* __s1, int __n)
   { return __builtin_strrchr(const_cast<const char*>(__s1), __n); }
+#endif
 
   using ::strstr;
 
+#if !defined(_SCO_DS)
   inline char*
   strstr(char* __s1, const char* __s2)
   { return __builtin_strstr(const_cast<const char*>(__s1), __s2); }
+#endif
 
 _GLIBCXX_END_NAMESPACE
 
