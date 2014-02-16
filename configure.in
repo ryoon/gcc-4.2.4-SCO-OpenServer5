@@ -1049,7 +1049,7 @@ ACX_PROG_GNAT
 ACX_PROG_CMP_IGNORE_INITIAL
 
 # Check for GMP and MPFR
-gmplibs="-lmpfr"
+gmplibs="-static -lmpfr"
 gmpinc=
 have_gmp=yes
 # Specify a location for mpfr

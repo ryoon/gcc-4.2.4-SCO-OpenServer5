@@ -2245,7 +2245,7 @@ do_compare="$gcc_cv_prog_cmp_skip"
 
 
 # Check for GMP and MPFR
-gmplibs="-lmpfr"
+gmplibs="-static -lmpfr"
 gmpinc=
 have_gmp=yes
 # Specify a location for mpfr
